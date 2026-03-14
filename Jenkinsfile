@@ -8,15 +8,15 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('Compile') {
             steps {
-                bat 'mvn clean package'
+                bat 'javac CourseManagementServer.java'
             }
         }
 
-        stage('Deploy') {
+        stage('Run Server') {
             steps {
-                echo 'Application Built and Deployed Successfully'
+                bat 'java CourseManagementServer'
             }
         }
 
